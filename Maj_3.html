@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروپوزال ملی سرشماری ثبتی‌مبنا | نسخه استراتژیک</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif; background-color: #020617; color: #cbd5e1; overflow-x: hidden; }
+        .glass-card { 
+            background: rgba(15, 23, 42, 0.6); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 1.5rem;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        .glass-card:hover { 
+            border-color: rgba(56, 189, 248, 0.5); 
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+        }
+        .slide-tag { 
+            background: linear-gradient(90deg, #0ea5e9, #2563eb); 
+            color: white; padding: 2px 10px; border-radius: 6px; 
+            font-size: 0.7rem; font-weight: 900;
+        }
+        .bullet-blue { border-right: 3px solid #3b82f6; padding-right: 12px; }
+        .bullet-green { border-right: 3px solid #10b981; padding-right: 12px; }
+        .bullet-orange { border-right: 3px solid #f59e0b; padding-right: 12px; }
+        .bullet-red { border-right: 3px solid #ef4444; padding-right: 12px; }
+        .neon-text-red { text-shadow: 0 0 10px rgba(239, 68, 68, 0.5); color: #fca5a5; }
+        .gauge-box { width: 90px; height: 50px; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+
+    <header class="max-w-7xl mx-auto mb-16 relative">
+        <div class="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
+        <div class="flex flex-col md:flex-row justify-between items-center relative z-10">
+            <div>
+                <h1 class="text-4xl font-black text-white mb-3 tracking-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">زیرساخت استراتژیک</span> سرشماری ثبتی‌مبنا
+                </h1>
+                <p class="text-slate-400 text-lg border-r-4 border-blue-500 pr-4">ارائه کامل ۲۰ اسلاید نقشه راه ملی (بدون سانسور)</p>
+            </div>
+            <div class="mt-8 md:mt-0 flex gap-4">
+                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-700 text-center">
+                    <div class="text-[10px] text-slate-500 uppercase">استاندارد مرجع</div>
+                    <div class="text-blue-400 font-bold">DAMA-DMBOK</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="glass-card p-6 border-t-2 border-blue-500">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 01</span>
+                <i class="fas fa-network-wired text-blue-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">معرفی پروژه</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">این پروپوزال یک راهکار ملی برای طراحی و استقرار زیرساخت سرشماری ثبتی‌مبنا ارائه می‌کند که فراتر از یک پروژه IT یا آماری است.</p>
+                <p class="bullet-blue">تمرکز اصلی بر تبدیل داده‌های ثبتی پراکنده به خروجی رسمی، قابل استناد و پایدار سرشماری است.</p>
+                <p class="bullet-green font-bold text-emerald-400">خروجی نهایی باید هم‌زمان سه ویژگی «اعتبار آماری»، «پذیرش نهادی» و «قابلیت دفاع حقوقی» را داشته باشد.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-t-2 border-amber-500">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 02</span>
+                <div class="gauge-box"><canvas id="gauge2"></canvas></div>
+            </div>
+            <h3 class="text-white font-bold mb-4">مسئله اصلی و چرایی</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">کشور با کمبود داده مواجه نیست، بلکه با فقدان معماری تجمیع و معنا‌بخشی داده مواجه است.</p>
+                <p class="bullet-orange text-amber-200">داده‌های ثبتی موجود ناهمگون، بعضاً متناقض و فاقد پیوند ساختاری هستند.</p>
+                <p class="bullet-red neon-text-red font-bold">استفاده مستقیم از این داده‌ها بدون لایه‌های کنترلی، منجر به آمار نادرست و بی‌اعتمادی نهادی می‌شود.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-t-2 border-red-500">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 03</span>
+                <i class="fas fa-biohazard text-red-500 animate-pulse"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">محدودیت‌های روش سنتی</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-orange">هزینه‌های بسیار بالا و فشار اجرایی گسترده، پایداری این روش را زیر سؤال برده است.</p>
+                <p class="bullet-orange">خطای انسانی و تأخیر زمانی بالا، کیفیت تصمیم‌سازی را کاهش می‌دهد.</p>
+                <p class="bullet-red font-bold text-red-400">این روش ذاتاً «مقطعی» است و امکان پایش مستمر تحولات جمعیتی را ندارد.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-t-2 border-emerald-500">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 04</span>
+                <i class="fas fa-file-contract text-emerald-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">الزام گذار</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">گذار به سرشماری ثبتی‌مبنا یک الزام قانونی و راهبردی است نه انتخاب سلیقه‌ای.</p>
+                <p class="bullet-green text-emerald-300">امکان تولید آمار به‌هنگام و کاهش هزینه‌های بلندمدت فراهم می‌شود.</p>
+                <p class="bullet-red font-bold">بدون معماری درست، این گذار می‌تواند پرریسک‌تر از روش سنتی باشد.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-t-2 border-blue-800">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 05</span>
+                <i class="fas fa-crosshairs text-blue-300"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">هدف کلان پروژه</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">ایجاد زیرساخت یکپارچه برای دریافت، پالایش، پیونددهی و بازسازی داده‌های ثبتی.</p>
+                <p class="bullet-green">تولید خروجی رسمی سرشماری با قابلیت تکرار و ممیزی در دوره‌های بعدی.</p>
+                <p class="bullet-red font-bold text-red-400">عدم وابستگی به افراد، پروژه‌های مقطعی یا پیمانکاران خاص.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-t-2 border-indigo-500">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 06</span>
+                <i class="fas fa-sitemap text-indigo-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">رویکرد معماری کلان</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">معماری پروژه مبتنی بر Enterprise Architecture و Data Architecture است.</p>
+                <p class="bullet-blue">لایه‌های امنیت، داده، یادگیری ماشین و تصمیم‌سازی به‌صورت وابسته طراحی شده‌اند.</p>
+                <p class="bullet-red font-bold neon-text-red">هیچ لایه‌ای اجازه عملکرد مستقل و بدون نظارت ندارد.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-t-2 border-cyan-500">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 07</span>
+                <i class="fas fa-cube text-cyan-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">معماری‌های مرجع</h3>
+            <div class="text-xs space-y-3">
+                <p class="bullet-blue">Data Governance Architecture برای حکمرانی داده.</p>
+                <p class="bullet-blue">Big Data Architecture برای پردازش در مقیاس ملی.</p>
+                <p class="bullet-blue">MLOps (Machine Learning Operations – عملیات‌سازی یادگیری ماشین).</p>
+                <p class="bullet-green font-bold text-emerald-400">بومی‌سازی کامل با ساختار نهادی کشور.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-t-2 border-slate-500 bg-blue-900/10">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 08</span>
+                <div class="h-12 w-24"><canvas id="radar8"></canvas></div>
+            </div>
+            <h3 class="text-white font-bold mb-4">مزایای معماری پیشنهادی</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-green">کاهش ریسک‌های امنیتی و حقوقی.</p>
+                <p class="bullet-green">افزایش شفافیت فرایند تولید آمار.</p>
+                <p class="bullet-orange">افزایش پیچیدگی فنی نسبت به راهکارهای ساده اما ناپایدار.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-t-2 border-red-600">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 09</span>
+                <i class="fas fa-shield-alt text-red-500"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4 text-red-400">هدف لایه امنیت و ریسک</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">تضمین محرمانگی، یکپارچگی و قابلیت پاسخ‌گویی داده‌ها.</p>
+                <p class="bullet-red font-bold">جلوگیری از استفاده غیرمجاز یا تفسیر نادرست داده‌های ثبتی.</p>
+                <p class="bullet-green">ایجاد اعتماد نهادی به خروجی‌های آماری.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-r-4 border-r-purple-600">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 10</span>
+                <i class="fas fa-gavel text-purple-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">حاکمیت داده</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">استفاده از DAMA-DMBOK (چارچوب مدیریت داده).</p>
+                <p class="bullet-blue">تعریف Data Stewardship Matrix (ماتریس متولی‌گری داده).</p>
+                <p class="bullet-red font-black text-red-500 underline">عدم وجود مالکیت شفاف داده، خط قرمز پروژه است.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-r-4 border-r-slate-400">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 11</span>
+                <i class="fas fa-user-lock text-slate-300"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">کنترل دسترسی و Zero Trust</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">Zero Trust Architecture (معماری عدم اعتماد پیش‌فرض).</p>
+                <p class="bullet-blue">ارزیابی هر دسترسی بر اساس هویت، هدف و سطح حساسیت.</p>
+                <p class="bullet-red font-bold text-red-400">حذف کامل دسترسی‌های دائمی و غیرقابل ردگیری.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 12</span>
+                <i class="fas fa-low-vision text-pink-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">حریم خصوصی و ممیزی</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">Differential Privacy (حریم خصوصی تفاضلی) فقط در خروجی‌ها.</p>
+                <p class="bullet-blue">K-Anonymity (ناشناس‌سازی گروهی) در لایه داده.</p>
+                <p class="bullet-red font-bold neon-text-red">هیچ داده خرد قابل استخراج مستقیم نیست.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 13</span>
+                <i class="fas fa-server text-cyan-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4 text-cyan-300">دریافت و کنترل کیفیت</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">ELT (Extract–Load–Transform) به‌جای ETL سنتی.</p>
+                <p class="bullet-blue font-bold">نگهداری نسخه خام داده به‌صورت Immutable.</p>
+                <p class="bullet-orange">افزایش حجم ذخیره‌سازی به‌عنوان هزینه اجتناب‌ناپذیر.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 14</span>
+                <i class="fas fa-id-card text-teal-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">مدیریت داده‌های مرجع</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">MDM (Master Data Management – مدیریت داده‌های مرجع).</p>
+                <p class="bullet-blue">ایجاد نمای واحد فرد، خانوار و واحد مسکونی.</p>
+                <p class="bullet-green font-bold text-emerald-400">افزایش انسجام و کاهش تناقض بین منابع.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 15</span>
+                <i class="fas fa-clone text-orange-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">حذف داده‌های تکراری</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">Deduplication با Blocking و LSH (Locality Sensitive Hashing).</p>
+                <p class="bullet-blue">تطبیق احتمالی به‌جای تطبیق قطعی.</p>
+                <p class="bullet-orange italic text-xs">افزایش بار محاسباتی ولی کاهش خطای ساختاری.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-b-4 border-b-purple-500">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 16</span>
+                <i class="fas fa-brain text-purple-400 animate-pulse"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">نقش یادگیری ماشین</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">استفاده از ML برای کاهش عدم قطعیت، نه تصمیم نهایی.</p>
+                <p class="bullet-red font-black text-red-500 uppercase tracking-widest">ممنوعیت تصمیم‌گیری غیرقابل بازگشت توسط مدل‌ها.</p>
+                <p class="bullet-green">افزایش دقت پیونددهی رکوردها.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 border-b-4 border-b-red-600">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 17</span>
+                <i class="fas fa-chart-line text-red-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">کیفیت مدل و Drift</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue">مهندسی ویژگی مبتنی بر زبان فارسی و تغییرات زمانی.</p>
+                <p class="bullet-blue font-bold">پایش Data Drift و Model Drift به‌صورت مستمر.</p>
+                <p class="bullet-red font-bold neon-text-red">مدل بدون پایش، تهدید آماری محسوب می‌شود.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 18</span>
+                <i class="fas fa-users-cog text-blue-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4 text-blue-300">بازسازی خانوار</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-blue font-bold">مدل‌سازی خانوار به‌صورت گراف احتمالی.</p>
+                <p class="bullet-blue">وزن‌دهی روابط به‌جای فرض قطعیت.</p>
+                <p class="bullet-green font-bold text-emerald-400">افزایش تطابق با واقعیت اجتماعی.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-6">
+            <div class="flex justify-between mb-4">
+                <span class="slide-tag">SLIDE 19</span>
+                <i class="fas fa-desktop text-emerald-400"></i>
+            </div>
+            <h3 class="text-white font-bold mb-4">داشبوردها و خروجی‌ها</h3>
+            <div class="text-sm space-y-4">
+                <p class="bullet-green font-bold text-emerald-300">نقشه‌های پویا و شاخص‌های اطمینان.</p>
+                <p class="bullet-green">APIهای تجمیعی برای مصرف نهادی.</p>
+                <p class="bullet-red font-black text-red-500">عدم ارائه داده خرد یا قابل بازشناسایی.</p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-3 glass-card p-10 bg-gradient-to-br from-slate-900 to-blue-900/40 border-2 border-blue-500/50">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <div>
+                    <span class="slide-tag mb-4 inline-block">SLIDE 20</span>
+                    <h2 class="text-3xl font-black text-white italic">جمع‌بندی نهایی (Integrated Axes)</h2>
+                </div>
+                <div class="flex gap-4 mt-6 md:mt-0">
+                    <div class="px-6 py-3 bg-blue-500/10 border border-blue-500/30 rounded-xl text-blue-400 text-center">
+                        <i class="fas fa-shield-alt mb-2 block"></i>
+                        <span class="text-xs font-bold uppercase">امنیت دفاعی</span>
+                    </div>
+                    <div class="px-6 py-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-center">
+                        <i class="fas fa-check-circle mb-2 block"></i>
+                        <span class="text-xs font-bold uppercase">اتکای آماری</span>
+                    </div>
+                    <div class="px-6 py-3 bg-indigo-500/10 border border-indigo-500/30 rounded-xl text-indigo-400 text-center">
+                        <i class="fas fa-university mb-2 block"></i>
+                        <span class="text-xs font-bold uppercase">پذیرش نهادی</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8 text-sm">
+                <p class="bullet-green text-emerald-400">معماری از نظر امنیتی قابل دفاع است.</p>
+                <p class="bullet-green text-emerald-400">خروجی‌ها از نظر آماری قابل اتکا هستند.</p>
+                <p class="bullet-green text-emerald-400">ساختار از نظر نهادی قابل پذیرش است.</p>
+            </div>
+
+            <div class="bg-red-900/20 border border-red-500/50 p-6 rounded-2xl text-center">
+                <p class="text-red-500 font-black text-xl tracking-widest animate-pulse">
+                   ⚠️ هرگونه ساده‌سازی خارج از این چارچوب، ریسک ملی ایجاد می‌کند.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const baseOptions = { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } };
+
+        // Gauge Slide 2
+        new Chart(document.getElementById('gauge2'), {
+            type: 'doughnut',
+            data: { datasets: [{ data: [85, 15], backgroundColor: ['#f59e0b', '#1e293b'], borderWidth: 0, circumference: 180, rotation: 270 }] },
+            options: baseOptions
+        });
+
+        // Radar Slide 8
+        new Chart(document.getElementById('radar8'), {
+            type: 'radar',
+            data: {
+                labels: ['1', '2', '3', '4', '5'],
+                datasets: [{ data: [90, 80, 95, 70, 85], backgroundColor: 'rgba(56, 189, 248, 0.2)', borderColor: '#0ea5e9', borderWidth: 1, pointRadius: 0 }]
+            },
+            options: { ...baseOptions, scales: { r: { display: false } } }
+        });
+    </script>
+</body>
+</html>
